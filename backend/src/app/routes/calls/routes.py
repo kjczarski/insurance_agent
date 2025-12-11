@@ -9,6 +9,9 @@ from app.clients.elevenlabs.config import ElevenLabsSettings
 from app.routes.calls.dto import (
     CallInsurerRequestDTO,
     CallInsurerResponseDTO,
+    TranscriptDTO,
+    TranscriptListResponseDTO,
+    TranscriptTurnDTO,
     WebhookResponseDTO,
     WebhookTranscriptDTO,
 )
@@ -29,6 +32,8 @@ class CallsRouter:
         
         self.router.post("/insurer")(self.call_insurer)
         self.router.post("/webhook/transcript")(self.webhook_transcript)
+        self.router.get("/transcripts")(self.get_transcripts)
+        self.router.get("/transcripts/{conversation_id}")(self.get_transcript)
 
     async def call_insurer(self, request: CallInsurerRequestDTO) -> CallInsurerResponseDTO:
         try:
@@ -111,18 +116,20 @@ class CallsRouter:
             webhook = WebhookTranscriptDTO(**webhook_data)
             
             transcript = CallTranscript(
-                call_id=webhook.call_id,
-                transcript=webhook.transcript,
-                status=webhook.status,
-                duration=webhook.duration,
-                metadata=webhook.metadata,
+                conversation_id=webhook.data.conversation_id,
+                agent_id=webhook.data.agent_id,
+                status=webhook.data.status,
+                transcript=webhook.data.transcript,
+                metadata=webhook.data.metadata,
+                analysis=webhook.data.analysis,
+                user_id=webhook.data.user_id,
             )
             
             await self.call_service.process_transcript(transcript)
             
             return WebhookResponseDTO(
                 message="Transcript processed successfully",
-                call_id=webhook.call_id,
+                conversation_id=webhook.data.conversation_id,
             )
         except CallServiceError as e:
             logger.error(f"Call service error processing transcript: {e}")
@@ -135,6 +142,72 @@ class CallsRouter:
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to process transcript",
+            ) from e
+
+    async def get_transcripts(
+        self, 
+        limit: int = 100, 
+        offset: int = 0
+    ) -> TranscriptListResponseDTO:
+        try:
+            transcripts = await self.call_service.get_transcripts(limit=limit, offset=offset)
+            
+            return TranscriptListResponseDTO(
+                transcripts=[
+                    TranscriptDTO(
+                        conversation_id=t.conversation_id,
+                        agent_id=t.agent_id,
+                        status=t.status,
+                        transcript=[
+                            TranscriptTurnDTO(
+                                role=turn.get("role", "unknown"),
+                                message=turn.get("message", "")
+                            )
+                            for turn in (t.transcript or [])
+                        ] if t.transcript else None,
+                        user_id=t.user_id,
+                    )
+                    for t in transcripts
+                ],
+                total=len(transcripts),
+            )
+        except Exception as e:
+            logger.error(f"Error fetching transcripts: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to fetch transcripts",
+            ) from e
+
+    async def get_transcript(self, conversation_id: str) -> TranscriptDTO:
+        try:
+            transcript = await self.call_service.get_transcript(conversation_id)
+            
+            if not transcript:
+                raise HTTPException(
+                    status_code=status.HTTP_404_NOT_FOUND,
+                    detail=f"Transcript not found for conversation {conversation_id}",
+                )
+            
+            return TranscriptDTO(
+                conversation_id=transcript.conversation_id,
+                agent_id=transcript.agent_id,
+                status=transcript.status,
+                transcript=[
+                    TranscriptTurnDTO(
+                        role=turn.get("role", "unknown"),
+                        message=turn.get("message", "")
+                    )
+                    for turn in (transcript.transcript or [])
+                ] if transcript.transcript else None,
+                user_id=transcript.user_id,
+            )
+        except HTTPException:
+            raise
+        except Exception as e:
+            logger.error(f"Error fetching transcript {conversation_id}: {e}")
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to fetch transcript",
             ) from e
 
     def get_router(self) -> APIRouter:
