@@ -1,5 +1,5 @@
 
-## Page 1
+
 
 This is Your
 # HEALTH MAINTENANCE ORGANIZATION CONTRACT
@@ -7,7 +7,7 @@ This is Your
 Issued by
 ## UnitedHealthcare of New York, Inc.
 
-&lt;watermark&gt;SAMPLE&lt;/watermark&gt;
+watermarkSAMPLE/watermark
 
 This is Your individual direct payment Contract for health maintenance organization coverage issued by UnitedHealthcare of New York, Inc. This Contract, together with the attached Schedule of Benefits, applications and any amendment or rider amending the terms of this Contract, constitute the entire agreement between You and Us.
 
@@ -15,12 +15,12 @@ You have the right to return this Contract. Examine it carefully. If You are not
 
 **Renewability.** The renewal date for this Contract is January 1 of each year. This Contract will automatically renew each year on the renewal date, unless otherwise terminated by Us as permitted by this Contract or by the Subscriber upon 30 days' prior written notice to Us.
 
-POL26.H.IEX.NY &lt;page_number&gt;1&lt;/page_number&gt; EXNY26IF0363309_000
+POL26.H.IEX.NY page_number1/page_number EXNY26IF0363309_000
 
 ---
 
 
-## Page 2
+
 
 **In-Network Benefits.** This Contract only covers in-network benefits. To receive in-network benefits You must receive care exclusively from Participating Providers in Our HMO Compass Network. Care Covered under this Contract (including Hospitalization) must be provided, arranged or authorized in advance by Your Primary Care Physician and, when required, approved by Us. In order to receive the benefits under this Contract, You must contact Your Primary Care Physician before You obtain the services except for services to treat an Emergency Condition described in the Emergency Services and Urgent Care section of this Contract. Except for care for an Emergency Condition described in the Emergency Services and Urgent Care section of this Contract, You will be responsible for paying the cost of all care that is provided by Non-Participating Providers.
 
@@ -30,17 +30,17 @@ This Contract is governed by the laws of New York State.
 
 UnitedHealthcare of New York, Inc.
 
-&lt;signature&gt;Daniel Benardette&lt;/signature&gt;
+signatureDaniel Benardette/signature
 Daniel Benardette, President
 
-&lt;watermark&gt;SAMPLE&lt;/watermark&gt;
+watermarkSAMPLE/watermark
 
-POL26.H.IEX.NY &lt;page_number&gt;2&lt;/page_number&gt;
+POL26.H.IEX.NY page_number2/page_number
 
 ---
 
 
-## Page 3
+
 
 # TABLE OF CONTENTS
 
@@ -176,13 +176,13 @@ POL26.H.IEX.NY &lt;page_number&gt;2&lt;/page_number&gt;
 </table>
 
 POL26.H.IEX.NY
-&lt;page_number&gt;3&lt;/page_number&gt;
-&lt;watermark&gt;Campaign&lt;/watermark&gt;
+page_number3/page_number
+watermarkCampaign/watermark
 
 ---
 
 
-## Page 4
+
 
 # Section I - Definitions
 
@@ -218,13 +218,13 @@ Defined terms will appear capitalized throughout this Contract.
 
 **Durable Medical Equipment ("DME"):** Equipment which is:
 
-POL26.H.IEX.NY &lt;page_number&gt;4&lt;/page_number&gt;
-&lt;watermark&gt;Copy&lt;/watermark&gt;
+POL26.H.IEX.NY page_number4/page_number
+watermarkCopy/watermark
 
 ---
 
 
-## Page 5
+
 
 *   Designed and intended for repeated use;
 *   Primarily and customarily used to serve a medical purpose;
@@ -250,13 +250,13 @@ POL26.H.IEX.NY &lt;page_number&gt;4&lt;/page_number&gt;
 
 **Grievance:** A complaint that You communicate to Us that does not involve a Utilization Review determination.
 
-POL26.H.IEX.NY &lt;page_number&gt;5&lt;/page_number&gt;
-&lt;watermark&gt;COPY&lt;/watermark&gt;
+POL26.H.IEX.NY page_number5/page_number
+watermarkCOPY/watermark
 
 ---
 
 
-## Page 6
+
 
 **Habilitation Services:** Health care services that help a person keep, learn or improve skills and functioning for daily living. Habilitation Services include the management of limitations and disabilities, including services or programs that help maintain or prevent deterioration in physical, cognitive, or behavioral function. These services consist of physical therapy, occupational therapy and speech therapy.
 
@@ -283,13 +283,13 @@ Hospital does not mean health resorts, spas, or infirmaries at schools or camps.
 **Medically Necessary:** See the How Your Coverage Works section of this Contract for the definition.
 
 POL26.H.IEX.NY
-&lt;page_number&gt;6&lt;/page_number&gt;
-&lt;watermark&gt;COPY&lt;/watermark&gt;
+page_number6/page_number
+watermarkCOPY/watermark
 
 ---
 
 
-## Page 7
+
 
 **Medicare:** Title XVIII of the Social Security Act, as amended.
 
@@ -318,13 +318,13 @@ POL26.H.IEX.NY
 **Prescription Drugs:** A medication, product or device that has been approved by the Food and Drug Administration ("FDA") and that can, under federal or state law, be dispensed only pursuant to a prescription order or refill. A Prescription Drug includes a medication that, due to its characteristics, is appropriate for self-administration or administration by a non-skilled caregiver.
 
 POL26.H.IEX.NY
-&lt;page_number&gt;7&lt;/page_number&gt;
-&lt;watermark&gt;Cavallo&lt;/watermark&gt;
+page_number7/page_number
+watermarkCavallo/watermark
 
 ---
 
 
-## Page 8
+
 
 **Primary Care Physician ("PCP"):** A participating Physician who typically is an internal medicine, family practice or pediatric Physician and who directly provides or coordinates a range of health care services for You.
 
@@ -351,13 +351,13 @@ POL26.H.IEX.NY
 **Urgent Care:** Medical care for an illness, injury or condition serious enough that a reasonable person would seek care right away, but not so severe as to require Emergency Department Care. Urgent Care may be rendered in a participating Physician's office or Urgent Care Center.
 
 POL26.H.IEX.NY
-&lt;page_number&gt;8&lt;/page_number&gt;
-&lt;watermark&gt;OFFICIAL&lt;/watermark&gt;
+page_number8/page_number
+watermarkOFFICIAL/watermark
 
 ---
 
 
-## Page 9
+
 
 **Urgent Care Center:** A licensed Facility (other than a Hospital) that provides Urgent Care.
 
@@ -367,14 +367,14 @@ POL26.H.IEX.NY
 
 **You, Your:** The Member.
 
-&lt;watermark&gt;SAMPLE&lt;/watermark&gt;
+watermarkSAMPLE/watermark
 
-POL26.H.IEX.NY &lt;page_number&gt;9&lt;/page_number&gt;
+POL26.H.IEX.NY page_number9/page_number
 
 ---
 
 
-## Page 10
+
 
 # Section II - How Your Coverage Works
 
@@ -407,8 +407,8 @@ You are only responsible for any Cost-Sharing that would apply to the Covered Se
 *   We give You written notice that the Provider is a Participating Provider in response to Your telephone request for network status information about the Provider; or
 *   We do not provide You with a written notice within one (1) business day of Your telephone request for network status information.
 
-&lt;watermark&gt;SAMPLE&lt;/watermark&gt;
+watermarkSAMPLE/watermark
 
 POL26.H.IEX.NY
-&lt;page_number&gt;10&lt;/page_number&gt;
+page_number10/page_number
 
