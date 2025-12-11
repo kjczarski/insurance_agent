@@ -143,6 +143,39 @@ export const ClaimDetails = ({ claim }) => {
                     </DetailSection>
                 </div>
 
+                {/* Service Details (NEW) */}
+                <div className="mb-6">
+                    <DetailSection title="Service Details" icon={Calendar} className="bg-white border-slate-200">
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm text-left">
+                                <thead className="text-xs text-slate-400 uppercase bg-slate-50/50 border-b border-slate-100">
+                                    <tr>
+                                        <th className="px-4 py-3 font-medium">Date of Service</th>
+                                        <th className="px-4 py-3 font-medium">Service / CPT Code</th>
+                                        <th className="px-4 py-3 font-medium text-right">Billed Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="divide-y divide-slate-100">
+                                    <tr>
+                                        <td className="px-4 py-3 text-slate-700 font-medium">
+                                            {format(new Date(claim.serviceDate || claim.submittedAt), 'MM/dd/yyyy')}
+                                        </td>
+                                        <td className="px-4 py-3">
+                                            <div className="flex flex-col">
+                                                <span className="font-medium text-slate-800">{claim.procedure.name}</span>
+                                                <span className="text-xs text-slate-500 font-mono">CPT: {claim.procedure.code}</span>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-3 text-right font-mono text-slate-700">
+                                            ${claim.financial?.billed}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </DetailSection>
+                </div>
+
                 {/* Diagnosis & Procedure */}
                 <div className="mb-6">
                     <DetailSection title="Clinical Details" icon={Activity} className="bg-white border-slate-200 shadow-sm">

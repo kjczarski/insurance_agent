@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, FileText, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import ReactMarkdown from 'react-markdown'; // Assuming we might install it, but sticking to simple pre-wrap for now to be safe without new deps
+
 
 export const PolicyModal = ({ isOpen, onClose, policyText }) => {
     if (!isOpen) return null;
