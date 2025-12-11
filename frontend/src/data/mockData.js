@@ -1,6 +1,6 @@
 
 
-import rawPatientsData from '../../../../data/patients.json';
+import rawPatientsData from '../../../data/patients.json';
 
 // Policy Document Text
 export const policyText = `
