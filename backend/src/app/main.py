@@ -6,6 +6,7 @@ from src.app.clients.elevenlabs.client import create_elevenlabs_client
 from src.app.core.config import get_settings
 from src.app.core.logging import setup_logging
 from src.app.routes.calls.routes import create_calls_router
+from src.app.services.call.database import create_transcript_repository
 from src.app.services.call.service import create_call_service
 
 
@@ -28,8 +29,13 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
     
+    transcript_repository = create_transcript_repository()
     elevenlabs_client = create_elevenlabs_client(settings.elevenlabs)
-    call_service = create_call_service(elevenlabs_client, settings.call_service)
+    call_service = create_call_service(
+        elevenlabs_client, 
+        settings.call_service,
+        transcript_repository
+    )
     calls_router = create_calls_router(call_service, settings.elevenlabs, settings.api_prefix)
     
     app.include_router(calls_router.get_router())
@@ -37,6 +43,10 @@ def create_app() -> FastAPI:
     @app.get("/health")
     async def health_check() -> dict[str, str]:
         return {"status": "healthy"}
+    
+    @app.on_event("startup")
+    async def startup_event() -> None:
+        await transcript_repository.initialize()
     
     @app.on_event("shutdown")
     async def shutdown_event() -> None:

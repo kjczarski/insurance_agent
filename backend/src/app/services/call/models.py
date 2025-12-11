@@ -13,8 +13,10 @@ class CallInsurerResponse(BaseModel):
 
 
 class CallTranscript(BaseModel):
-    call_id: str
-    transcript: str
-    status: str | None = None
-    duration: float | None = None
+    conversation_id: str
+    agent_id: str
+    status: str
+    transcript: list[dict] | None = None
     metadata: dict | None = None
+    analysis: dict | None = None
+    user_id: str | None = None

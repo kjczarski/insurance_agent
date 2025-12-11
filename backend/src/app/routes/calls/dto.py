@@ -12,14 +12,41 @@ class CallInsurerResponseDTO(BaseModel):
     status: str
 
 
-class WebhookTranscriptDTO(BaseModel):
-    call_id: str
-    transcript: str
-    status: str | None = None
-    duration: float | None = None
+class WebhookTranscriptDataDTO(BaseModel):
+    agent_id: str
+    conversation_id: str
+    status: str
+    user_id: str | None = None
+    transcript: list[dict] | None = None
     metadata: dict | None = None
+    analysis: dict | None = None
+    conversation_initiation_client_data: dict | None = None
+
+
+class WebhookTranscriptDTO(BaseModel):
+    type: str
+    data: WebhookTranscriptDataDTO
+    event_timestamp: float
 
 
 class WebhookResponseDTO(BaseModel):
     message: str
-    call_id: str
+    conversation_id: str
+
+
+class TranscriptTurnDTO(BaseModel):
+    role: str
+    message: str
+
+
+class TranscriptDTO(BaseModel):
+    conversation_id: str
+    agent_id: str
+    status: str
+    transcript: list[TranscriptTurnDTO] | None = None
+    user_id: str | None = None
+
+
+class TranscriptListResponseDTO(BaseModel):
+    transcripts: list[TranscriptDTO]
+    total: int

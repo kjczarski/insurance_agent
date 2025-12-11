@@ -81,6 +81,66 @@
                 "description": "Trigger an ElevenLabs phone call with a specific agent ID"
             },
             "response": []
+        },
+        {
+            "name": "Get All Transcripts",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/calls/transcripts?limit=100&offset=0",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "calls",
+                        "transcripts"
+                    ],
+                    "query": [
+                        {
+                            "key": "limit",
+                            "value": "100",
+                            "description": "Maximum number of transcripts to return"
+                        },
+                        {
+                            "key": "offset",
+                            "value": "0",
+                            "description": "Number of transcripts to skip"
+                        }
+                    ]
+                },
+                "description": "Retrieve all call transcripts with pagination"
+            },
+            "response": []
+        },
+        {
+            "name": "Get Transcript by ID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/api/calls/transcripts/:conversation_id",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "calls",
+                        "transcripts",
+                        ":conversation_id"
+                    ],
+                    "variable": [
+                        {
+                            "key": "conversation_id",
+                            "value": "",
+                            "description": "The conversation ID to retrieve"
+                        }
+                    ]
+                },
+                "description": "Retrieve a specific call transcript by conversation ID"
+            },
+            "response": []
         }
     ]
 }
