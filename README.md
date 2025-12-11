@@ -2,7 +2,7 @@
 
 **The AI Agent for Healthcare Insurance Resolution**
 
-> 🏆 **[Hackathon Name] Entry**
+> 🏆 **[11 LABS GLOBAL HACKATHON - WARSAW] Entry**
 
 ## 💡 The Problem
 Healthcare providers spend **hours every day** on hold with insurance companies, fighting for pre-authorizations and claim approvals. It's a manual, frustrating, and expensive process that delays patient care and burns out staff.
