@@ -1,0 +1,522 @@
+[
+    {
+        "Patient_ID": "P001",
+        "Payer_Name": "UnitedHealthcare",
+        "Member_ID": "UDR-1571-4971",
+        "Patient_Name": "Patricia Smith",
+        "Patient_DOB": "1993-11-22",
+        "Provider_Info": {
+            "Provider": "Prime Orthopedic Institute",
+            "Provider_NPI": "1787846414",
+            "Provider_TIN": "78-568437247",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1001",
+            "DOS": "2025-03-15",
+            "CPT_Code": "99214",
+            "Diagnosis_Code_ICD10": "I10",
+            "Amount_Billed": "150.00",
+            "Amount_Allowed": "120.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$0.00 met of $1000.00",
+            "Reason": "Policy Exclusion/Limit: Patient has not met the yearly preventative visit limit; routine screening."
+        }
+    },
+    {
+        "Patient_ID": "P002",
+        "Payer_Name": "Aetna",
+        "Member_ID": "AUD-3799-4050",
+        "Patient_Name": "Linda Brown",
+        "Patient_DOB": "1985-07-20",
+        "Provider_Info": {
+            "Provider": "St. Jude General Hospital",
+            "Provider_NPI": "3563451924",
+            "Provider_TIN": "59-672909845",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1002",
+            "DOS": "2025-04-01",
+            "CPT_Code": "94640",
+            "Diagnosis_Code_ICD10": "J45.909",
+            "Amount_Billed": "350.00",
+            "Amount_Allowed": "320.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Medically Necessary: Deductible met; 80/20 payment."
+        }
+    },
+    {
+        "Patient_ID": "P003",
+        "Payer_Name": "Humana",
+        "Member_ID": "YXX-8641-1579",
+        "Patient_Name": "Michael Martinez",
+        "Patient_DOB": "1963-12-12",
+        "Provider_Info": {
+            "Provider": "Kids First Pediatrics",
+            "Provider_NPI": "5537253172",
+            "Provider_TIN": "68-839303731",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1003",
+            "DOS": "2025-05-10",
+            "CPT_Code": "17106",
+            "Diagnosis_Code_ICD10": "L70.0",
+            "Amount_Billed": "4,500.00",
+            "Amount_Allowed": "3,800.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Not Medically Necessary: Procedure considered cosmetic; specifically excluded by policy."
+        }
+    },
+    {
+        "Patient_ID": "P004",
+        "Payer_Name": "Blue Cross Blue Shield",
+        "Member_ID": "DGN-8925-5597",
+        "Patient_Name": "Joseph Johnson",
+        "Patient_DOB": "1992-06-13",
+        "Provider_Info": {
+            "Provider": "Riverside Dermatology Clinic",
+            "Provider_NPI": "8395928407",
+            "Provider_TIN": "27-362149307",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1004",
+            "DOS": "2025-06-20",
+            "CPT_Code": "90837",
+            "Diagnosis_Code_ICD10": "F32.9",
+            "Amount_Billed": "180.00",
+            "Amount_Allowed": "150.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "PENDING - Requires Documentation",
+            "Deductible_Status_Prior": "$50.00 met of $1000.00",
+            "Reason": "Initial denial for Pre-Authorization was overturned, awaiting updated documentation for final payment."
+        }
+    },
+    {
+        "Patient_ID": "P005",
+        "Payer_Name": "Humana",
+        "Member_ID": "ZBO-8517-1330",
+        "Patient_Name": "Linda Martinez",
+        "Patient_DOB": "1967-07-14",
+        "Provider_Info": {
+            "Provider": "Mountain View Labs",
+            "Provider_NPI": "5298312065",
+            "Provider_TIN": "76-813352046",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1005",
+            "DOS": "2025-07-05",
+            "CPT_Code": "27766",
+            "Diagnosis_Code_ICD10": "S82.352A",
+            "Amount_Billed": "12,500.00",
+            "Amount_Allowed": "12,375.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Emergency Service: Inpatient hospitalization for accidental injury. Subject to 80/20 coinsurance."
+        }
+    },
+    {
+        "Patient_ID": "P006",
+        "Payer_Name": "Aetna",
+        "Member_ID": "EJS-1477-6821",
+        "Patient_Name": "David Rodriguez",
+        "Patient_DOB": "2002-06-26",
+        "Provider_Info": {
+            "Provider": "Mountain View Labs",
+            "Provider_NPI": "3652062880",
+            "Provider_TIN": "40-276790359",
+            "Provider_Status": "Out-of-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1006",
+            "DOS": "2025-08-12",
+            "CPT_Code": "99283",
+            "Diagnosis_Code_ICD10": "R10.9",
+            "Amount_Billed": "550.00",
+            "Amount_Allowed": "N/A"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$1050.00 met of $1000.00",
+            "Reason": "Out-of-Network: Service performed by a non-contracted provider. Patient is fully liable."
+        }
+    },
+    {
+        "Patient_ID": "P007",
+        "Payer_Name": "Humana",
+        "Member_ID": "IKW-4216-6448",
+        "Patient_Name": "Elizabeth Rodriguez",
+        "Patient_DOB": "1952-05-26",
+        "Provider_Info": {
+            "Provider": "Apex Cardiology Group",
+            "Provider_NPI": "5325316860",
+            "Provider_TIN": "74-224613411",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1007",
+            "DOS": "2025-09-01",
+            "CPT_Code": "80061",
+            "Diagnosis_Code_ICD10": "E11.9",
+            "Amount_Billed": "95.00",
+            "Amount_Allowed": "85.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "PENDING - Internal Review",
+            "Deductible_Status_Prior": "$0.00 met of $1000.00",
+            "Reason": "Claim currently under review for medical necessity despite deductible not being met. Decision expected in 14 days."
+        }
+    },
+    {
+        "Patient_ID": "P008",
+        "Payer_Name": "UnitedHealthcare",
+        "Member_ID": "TSS-1140-7018",
+        "Patient_Name": "Linda Williams",
+        "Patient_DOB": "1974-09-09",
+        "Provider_Info": {
+            "Provider": "Prime Orthopedic Institute",
+            "Provider_NPI": "3253890010",
+            "Provider_TIN": "60-102621819",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1008",
+            "DOS": "2025-10-15",
+            "CPT_Code": "99395",
+            "Diagnosis_Code_ICD10": "Z00.00",
+            "Amount_Billed": "200.00",
+            "Amount_Allowed": "180.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$1050.00 met of $1000.00",
+            "Reason": "Duplicate Claim: Claim for the same service on the same date was processed and paid previously."
+        }
+    },
+    {
+        "Patient_ID": "P009",
+        "Payer_Name": "Aetna",
+        "Member_ID": "LNC-3353-1745",
+        "Patient_Name": "Joseph Johnson",
+        "Patient_DOB": "2001-02-09",
+        "Provider_Info": {
+            "Provider": "Prime Orthopedic Institute",
+            "Provider_NPI": "5495394815",
+            "Provider_TIN": "85-732939609",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1009",
+            "DOS": "2025-11-05",
+            "CPT_Code": "93970",
+            "Diagnosis_Code_ICD10": "I25.10",
+            "Amount_Billed": "700.00",
+            "Amount_Allowed": "650.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "PENDING - Requires Documentation",
+            "Deductible_Status_Prior": "$1050.00 met of $1000.00",
+            "Reason": "Needs updated clinical notes from the clinic to justify the necessity of the vascular study."
+        }
+    },
+    {
+        "Patient_ID": "P010",
+        "Payer_Name": "Cigna",
+        "Member_ID": "ECK-8035-9820",
+        "Patient_Name": "David Jones",
+        "Patient_DOB": "1975-06-25",
+        "Provider_Info": {
+            "Provider": "Harbor View Radiology",
+            "Provider_NPI": "5684118973",
+            "Provider_TIN": "75-148473455",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2025-1010",
+            "DOS": "2025-12-01",
+            "CPT_Code": "43239",
+            "Diagnosis_Code_ICD10": "K21.9",
+            "Amount_Billed": "3,500.00",
+            "Amount_Allowed": "2,500.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "PARTIAL DENIAL",
+            "Deductible_Status_Prior": "$1050.00 met of $1000.00",
+            "Reason": "Exceeds UCR: Paid $2,500 (Allowed Amount). Denied for the remaining $1,000 billed by the provider."
+        }
+    },
+    {
+        "Patient_ID": "P011",
+        "Payer_Name": "Blue Cross Blue Shield",
+        "Member_ID": "GXV-2964-1533",
+        "Patient_Name": "Joseph Jones",
+        "Patient_DOB": "1978-06-11",
+        "Provider_Info": {
+            "Provider": "Global Pain Management",
+            "Provider_NPI": "2934879560",
+            "Provider_TIN": "44-344318914",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1011",
+            "DOS": "2026-01-10",
+            "CPT_Code": "99203",
+            "Diagnosis_Code_ICD10": "M54.5",
+            "Amount_Billed": "120.00",
+            "Amount_Allowed": "100.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$0.00 met of $1000.00",
+            "Reason": "Deductible Not Met: Patient is fully responsible for the Allowed Amount."
+        }
+    },
+    {
+        "Patient_ID": "P012",
+        "Payer_Name": "Blue Cross Blue Shield",
+        "Member_ID": "LWS-1461-6435",
+        "Patient_Name": "David Jones",
+        "Patient_DOB": "1954-10-03",
+        "Provider_Info": {
+            "Provider": "St. Jude General Hospital",
+            "Provider_NPI": "9646907153",
+            "Provider_TIN": "14-743049712",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1012",
+            "DOS": "2026-02-14",
+            "CPT_Code": "82465",
+            "Diagnosis_Code_ICD10": "E78.2",
+            "Amount_Billed": "75.00",
+            "Amount_Allowed": "65.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$100.00 met of $1000.00",
+            "Reason": "Routine lab work covered under policy with standard copay, deductible applies."
+        }
+    },
+    {
+        "Patient_ID": "P013",
+        "Payer_Name": "Aetna",
+        "Member_ID": "VRL-6887-2128",
+        "Patient_Name": "Jennifer Johnson",
+        "Patient_DOB": "1973-11-16",
+        "Provider_Info": {
+            "Provider": "St. Jude General Hospital",
+            "Provider_NPI": "6950318585",
+            "Provider_TIN": "86-383882200",
+            "Provider_Status": "Out-of-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1013",
+            "DOS": "2026-03-25",
+            "CPT_Code": "92557",
+            "Diagnosis_Code_ICD10": "H65.90",
+            "Amount_Billed": "300.00",
+            "Amount_Allowed": "N/A"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$100.00 met of $1000.00",
+            "Reason": "Lack of Referral: Specialist visit required a PCP referral which was not on file."
+        }
+    },
+    {
+        "Patient_ID": "P014",
+        "Payer_Name": "UnitedHealthcare",
+        "Member_ID": "ZRI-6472-8742",
+        "Patient_Name": "David Rodriguez",
+        "Patient_DOB": "1991-10-05",
+        "Provider_Info": {
+            "Provider": "Harbor View Radiology",
+            "Provider_NPI": "1068574553",
+            "Provider_TIN": "57-812400928",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1014",
+            "DOS": "2026-04-05",
+            "CPT_Code": "59400",
+            "Diagnosis_Code_ICD10": "Z34.00",
+            "Amount_Billed": "8,000.00",
+            "Amount_Allowed": "7,500.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "PENDING - Internal Review",
+            "Deductible_Status_Prior": "$100.00 met of $1000.00",
+            "Reason": "Maternity claim is being reviewed for newborn coverage coordination."
+        }
+    },
+    {
+        "Patient_ID": "P015",
+        "Payer_Name": "Aetna",
+        "Member_ID": "FZV-2920-3512",
+        "Patient_Name": "Joseph Johnson",
+        "Patient_DOB": "1998-07-22",
+        "Provider_Info": {
+            "Provider": "St. Jude General Hospital",
+            "Provider_NPI": "1991681409",
+            "Provider_TIN": "84-757154364",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1015",
+            "DOS": "2026-05-18",
+            "CPT_Code": "95812",
+            "Diagnosis_Code_ICD10": "G47.00",
+            "Amount_Billed": "900.00",
+            "Amount_Allowed": "850.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Experimental/Investigational: Sleep study procedure is not yet approved by the policy for this specific diagnosis."
+        }
+    },
+    {
+        "Patient_ID": "P016",
+        "Payer_Name": "Cigna",
+        "Member_ID": "EOC-9313-3079",
+        "Patient_Name": "David Smith",
+        "Patient_DOB": "1968-02-15",
+        "Provider_Info": {
+            "Provider": "Kids First Pediatrics",
+            "Provider_NPI": "4578544903",
+            "Provider_TIN": "83-760437296",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1016",
+            "DOS": "2026-06-02",
+            "CPT_Code": "16030",
+            "Diagnosis_Code_ICD10": "T20.00A",
+            "Amount_Billed": "600.00",
+            "Amount_Allowed": "580.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Accident related treatment (burns). Fully covered after deductible met; 80/20 payment."
+        }
+    },
+    {
+        "Patient_ID": "P017",
+        "Payer_Name": "Cigna",
+        "Member_ID": "XGW-5749-5318",
+        "Patient_Name": "Michael Martinez",
+        "Patient_DOB": "1955-10-30",
+        "Provider_Info": {
+            "Provider": "Apex Cardiology Group",
+            "Provider_NPI": "6974559824",
+            "Provider_TIN": "62-631570628",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1017",
+            "DOS": "2026-07-11",
+            "CPT_Code": "52353",
+            "Diagnosis_Code_ICD10": "N20.0",
+            "Amount_Billed": "5,000.00",
+            "Amount_Allowed": "4,500.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Timely Filing Limit Exceeded: Claim was submitted 10 months after the date of service, exceeding the 90-day filing window."
+        }
+    },
+    {
+        "Patient_ID": "P018",
+        "Payer_Name": "Blue Cross Blue Shield",
+        "Member_ID": "SFQ-6124-3493",
+        "Patient_Name": "Joseph Smith",
+            "Patient_DOB": "1994-12-01",
+        "Provider_Info": {
+            "Provider": "Midwest Family Practice",
+            "Provider_NPI": "7120997885",
+            "Provider_TIN": "38-940775753",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1018",
+            "DOS": "2026-08-22",
+            "CPT_Code": "93306",
+            "Diagnosis_Code_ICD10": "I50.9",
+            "Amount_Billed": "450.00",
+            "Amount_Allowed": "410.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Chronic cardiac condition monitoring. Fully covered after deductible met."
+        }
+    },
+    {
+        "Patient_ID": "P019",
+        "Payer_Name": "Cigna",
+        "Member_ID": "IEC-9600-1426",
+        "Patient_Name": "Jennifer Williams",
+        "Patient_DOB": "1972-02-10",
+        "Provider_Info": {
+            "Provider": "Apex Cardiology Group",
+            "Provider_NPI": "6188069941",
+            "Provider_TIN": "17-828961853",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1019",
+            "DOS": "2026-09-08",
+            "CPT_Code": "99213",
+            "Diagnosis_Code_ICD10": "J02.9",
+            "Amount_Billed": "90.00",
+            "Amount_Allowed": "75.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "DENIED",
+            "Deductible_Status_Prior": "$0.00 met of $1000.00",
+            "Reason": "Exceeds Benefit Limit: Patient has already exhausted the allowed 30 outpatient visits for the year."
+        }
+    },
+    {
+        "Patient_ID": "P020",
+        "Payer_Name": "Blue Cross Blue Shield",
+        "Member_ID": "EWO-8243-6078",
+        "Patient_Name": "David Davis",
+        "Patient_DOB": "1985-02-25",
+        "Provider_Info": {
+            "Provider": "Riverside Dermatology Clinic",
+            "Provider_NPI": "7733221635",
+            "Provider_TIN": "94-454335023",
+            "Provider_Status": "In-Network"
+        },
+        "Claim_Details": {
+            "Claim_ID": "C2026-1020",
+            "DOS": "2026-10-19",
+            "CPT_Code": "43260",
+            "Diagnosis_Code_ICD10": "K80.10",
+            "Amount_Billed": "2,800.00",
+            "Amount_Allowed": "2,550.00"
+        },
+        "Claim_Status_Details": {
+            "Status": "ACCEPTED",
+            "Deductible_Status_Prior": "$1000.00 met of $1000.00",
+            "Reason": "Gallstone treatment. Covered procedure with standard 80/20 coinsurance."
+        }
+    }
+]
