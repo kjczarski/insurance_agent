@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, Zap, Settings, Bell, Search, Menu } from 'lucide-react';
+import { LayoutDashboard, Zap, Settings, Bell, Search, Menu, Phone } from 'lucide-react';
 import { ClaimsList } from './components/ClaimsList';
 import { ClaimDetails } from './components/ClaimDetails';
 import { claimsData } from './data/mockData';
