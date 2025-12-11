@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LayoutDashboard, Zap, Settings, Bell, Search, Menu } from 'lucide-react';
+import { LayoutDashboard, Zap, Settings, Bell, Search, Menu, Phone } from 'lucide-react';
 import { ClaimsList } from './components/ClaimsList';
 import { ClaimDetails } from './components/ClaimDetails';
 import { claimsData } from './data/mockData';
@@ -19,7 +19,7 @@ function App() {
             <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
               <Zap className="text-white fill-white" size={18} />
             </div>
-            <span className="hidden lg:block ml-3 font-bold text-white tracking-tight text-lg">InsurAI</span>
+            <span className="hidden lg:block ml-3 font-bold text-white tracking-tight text-lg">ClaimReclaim</span>
           </div>
 
           <nav className="p-4 space-y-2">

@@ -1,16 +1,55 @@
-# React + Vite
+# ClaimReclaim 🏥🤖
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Healthcare Insurance Resolution Agent Dashboard**
 
-Currently, two official plugins are available:
+> 🏆 Built for the [Hackathon Name] Hackathon
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ClaimReclaim is a real-time command center for healthcare staff to monitor AI agents as they autonomously negotiate insurance claims. It transforms the tedious, hours-long process of waiting on hold and arguing for pre-authorizations into a streamlined, visual workflow.
 
-## React Compiler
+![ClaimReclaim Dashboard](https://via.placeholder.com/800x450.png?text=ClaimReclaim+Dashboard+Preview)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Key Features
 
-## Expanding the ESLint configuration
+*   **Live Claims Pulse**: Monitor active call statuses (Calling, On Hold, Speaking) in real-time.
+*   **Transparent AI Logic**: Watch the "Live Transcript" as the AI agent navigates IVR menus and speaks with representatives.
+*   **Smart Document Handling**: Instant access to patient policies, medical records, and generated approval letters.
+*   **Action-Oriented Details**: Clear visualization of denial reasons, missing information, and procedure codes (CPT/ICD-10).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+*   **Frontend**: React (Vite) for lightning-fast performance.
+*   **Styling**: Tailwind CSS for a premium, clean medical aesthetic.
+*   **Icons**: Lucide React.
+*   **Animations**: Framer Motion & CSS native animations.
+*   **State**: React Hooks (useState, useEffect).
+
+## 🏃‍♂️ How to Run Locally
+
+Get the dashboard running in seconds:
+
+1.  **Navigate to the project folder:**
+    ```bash
+    cd frontend
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Open your browser:**
+    Go to the URL shown in the terminal (usually `http://localhost:5173`).
+
+## 🔮 Future Roadmap
+
+*   **ElevenLabs Integration**: Bi-directional voice streaming for the AI agent.
+*   **n8n Workflow**: Webhook integration for real-time status updates from the backend telephony system.
+*   **EHR Write-back**: Automatically updating patient charts with resolution outcomes.
+
+---
+*Created with ❤️ for better healthcare efficiency.*
