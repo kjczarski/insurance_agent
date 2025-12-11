@@ -19,6 +19,8 @@ Instead of sitting on hold, staff can manage a dashboard of active agents workin
 
 ## 🛠️ Tech Stack
 
+PROTOTYPED WITH **BOLT**
+
 This project is built with a modern, fast, and responsive stack:
 
 *   **Frontend Hub**: React (Vite) + Tailwind CSS.
