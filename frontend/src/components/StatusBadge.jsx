@@ -8,7 +8,7 @@ const statusConfig = {
     speaking: { label: "Speaking", color: "bg-blue-100 text-blue-800", dot: "bg-blue-500 animate-pulse", icon: Mic },
     approved: { label: "Approved", color: "bg-emerald-100 text-emerald-800", dot: "bg-emerald-500", icon: CheckCircle2 },
     denied: { label: "Denied", color: "bg-red-100 text-red-800", dot: "bg-red-500", icon: XCircle },
-    needs_info: { label: "Needs Info", color: "bg-purple-100 text-purple-800", dot: "bg-purple-500", icon: FileQuestion },
+    needs_info: { label: "Needs Info", color: "bg-amber-100 text-amber-800", dot: "bg-amber-500", icon: FileQuestion },
 };
 
 export const StatusBadge = ({ status, size = "md" }) => {
