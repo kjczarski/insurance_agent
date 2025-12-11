@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import {
     User, Calendar, CreditCard, Activity, FileText, Phone,
-    MapPin, Clock, Shield, AlertCircle, File, Eye
+    MapPin, Clock, Shield, AlertCircle, File, Eye, Building2, Banknote, BookOpen
 } from 'lucide-react';
 import { format } from 'date-fns';
 import { StatusBadge } from './StatusBadge';
 import { motion, AnimatePresence } from 'framer-motion';
+import { PolicyModal } from './PolicyModal';
+import { policyText } from '../data/mockData';
 
 const DetailSection = ({ title, icon: Icon, children, className = "" }) => (
     <div className={`p-5 rounded-2xl bg-slate-50 border border-slate-100 ${className}`}>
@@ -17,14 +19,16 @@ const DetailSection = ({ title, icon: Icon, children, className = "" }) => (
     </div>
 );
 
-const InfoRow = ({ label, value, mono = false }) => (
+const InfoRow = ({ label, value, mono = false, highlight = false }) => (
     <div>
         <p className="text-xs text-slate-400 mb-0.5">{label}</p>
-        <p className={`text-sm font-medium text-slate-700 ${mono ? 'font-mono' : ''}`}>{value}</p>
+        <p className={`text-sm font-medium ${mono ? 'font-mono' : ''} ${highlight ? 'text-slate-900 font-bold' : 'text-slate-700'}`}>{value}</p>
     </div>
 );
 
 export const ClaimDetails = ({ claim }) => {
+    const [isPolicyModalOpen, setIsPolicyModalOpen] = useState(false);
+
     if (!claim) {
         return (
             <div className="h-full flex flex-col items-center justify-center text-slate-400">
@@ -40,6 +44,12 @@ export const ClaimDetails = ({ claim }) => {
 
     return (
         <div className="bg-white rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-200 h-full overflow-hidden flex flex-col">
+            <PolicyModal
+                isOpen={isPolicyModalOpen}
+                onClose={() => setIsPolicyModalOpen(false)}
+                policyText={policyText}
+            />
+
             {/* Header */}
             <div className="px-8 py-6 border-b border-slate-100 bg-gradient-to-r from-slate-50/80 to-white backdrop-blur-md">
                 <div className="flex items-start justify-between">
@@ -49,38 +59,85 @@ export const ClaimDetails = ({ claim }) => {
                             <StatusBadge status={claim.status} />
                         </div>
                         <div className="flex items-center gap-4 text-sm text-slate-500">
-                            <span className="font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-600">{claim.id}</span>
+                            <span className="font-mono bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-bold">{claim.id}</span>
                             <span>•</span>
                             <span>Submitted {format(new Date(claim.submittedAt), 'MMMM d, yyyy')}</span>
                         </div>
                     </div>
                     <div className="text-right">
-                        <p className="text-3xl font-bold text-slate-900 tracking-tight">${claim.estimatedCost.toLocaleString()}</p>
-                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide mt-1">Estimated Cost</p>
+                        <p className="text-3xl font-bold text-slate-900 tracking-tight">${Number(claim.financial?.billed?.replace(/,/g, '') || claim.estimatedCost).toLocaleString()}</p>
+                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wide mt-1">Total Billed</p>
                     </div>
                 </div>
             </div>
 
             <div className="flex-1 overflow-y-auto custom-scrollbar p-8">
+                {/* Action Bar */}
+                <div className="flex justify-end mb-6">
+                    <button
+                        onClick={() => setIsPolicyModalOpen(true)}
+                        className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white text-sm font-medium rounded-lg hover:bg-slate-800 transition-colors shadow-sm"
+                    >
+                        <BookOpen size={16} />
+                        View Policy Document
+                    </button>
+                </div>
+
                 <div className="grid grid-cols-2 gap-6 mb-6">
                     {/* Patient Info */}
                     <DetailSection title="Patient Information" icon={User}>
                         <div className="space-y-4">
                             <InfoRow label="Date of Birth" value={format(new Date(claim.patient.dob), 'MMM d, yyyy')} />
                             <InfoRow label="Member ID" value={claim.patient.insuranceId} mono />
-                            <InfoRow label="Policy Plan" value={claim.patient.policy} />
+                            <InfoRow label="Policy Plan" value={claim.patient.policy || "Standard"} />
                         </div>
                     </DetailSection>
 
-                    {/* Insurance Info */}
-                    <DetailSection title="Insurance Provider" icon={Shield}>
+                    {/* Insurance & Provider Info */}
+                    <DetailSection title="Payer & Provider" icon={Building2}>
                         <div className="space-y-4">
-                            <InfoRow label="Provider" value={claim.insurance.provider} />
-                            <InfoRow label="Contact Phone" value={claim.insurance.phone} mono />
-                            <div className="pt-2">
-                                <button className="text-xs flex items-center gap-1 text-blue-600 font-medium hover:underline">
-                                    <Phone size={12} /> Call Provider manually
-                                </button>
+                            <div className="flex justify-between">
+                                <InfoRow label="Payer" value={claim.insurance.provider} />
+                                <InfoRow label="Phone" value={claim.insurance.phone} mono />
+                            </div>
+                            <div className="pt-4 border-t border-slate-100">
+                                <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Service Provider</p>
+                                <div className="space-y-3">
+                                    <InfoRow label="Facility/Doctor" value={claim.provider?.name || "Unknown Provider"} highlight />
+                                    <div className="grid grid-cols-2 gap-2">
+                                        <InfoRow label="NPI" value={claim.provider?.npi} mono />
+                                        <div className="flex flex-col">
+                                            <span className="text-xs text-slate-400 mb-0.5">Status</span>
+                                            <span className={`text-sm font-medium inline-flex items-center gap-1 ${claim.provider?.status === 'In-Network' ? 'text-emerald-600' : 'text-amber-600'}`}>
+                                                {claim.provider?.status === 'In-Network' ? <Shield size={12} /> : <AlertCircle size={12} />}
+                                                {claim.provider?.status || "Unknown"}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </DetailSection>
+                </div>
+
+                {/* Financial Breakdown (NEW) */}
+                <div className="mb-6">
+                    <DetailSection title="Financial Breakdown" icon={Banknote} className="bg-slate-50 border-slate-200">
+                        <div className="grid grid-cols-3 gap-6">
+                            <InfoRow label="Billed Amount" value={`$${claim.financial?.billed}`} mono highlight />
+                            <InfoRow label="Allowed Amount" value={claim.financial?.allowed === 'N/A' ? 'N/A' : `$${claim.financial?.allowed}`} mono />
+                            <div className="bg-white p-3 rounded-lg border border-slate-200">
+                                <p className="text-xs text-slate-400 mb-1">Deductible Status</p>
+                                <p className="text-sm font-medium text-slate-700">{claim.financial?.deductibleStatus}</p>
+                                <div className="w-full h-1.5 bg-slate-100 rounded-full mt-2 overflow-hidden">
+                                    <div
+                                        className="h-full bg-blue-500 rounded-full"
+                                        style={{
+                                            width: claim.financial?.deductibleStatus ?
+                                                `${(parseFloat(claim.financial.deductibleStatus.split(' ')[0].replace('$', '')) / 1000) * 100}%` : '0%'
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </DetailSection>
@@ -91,8 +148,8 @@ export const ClaimDetails = ({ claim }) => {
                     <DetailSection title="Clinical Details" icon={Activity} className="bg-white border-slate-200 shadow-sm">
                         <div className="grid grid-cols-3 gap-6">
                             <div className="col-span-2">
-                                <InfoRow label="Procedure" value={claim.procedure.name} />
-                                <p className="text-sm text-slate-500 mt-1">{claim.diagnosis}</p>
+                                <InfoRow label="Procedure" value={claim.procedure.name} highlight />
+                                <p className="text-sm text-slate-500 mt-1 italic">{claim.diagnosis}</p>
                             </div>
                             <div className="space-y-3">
                                 <InfoRow label="CPT Code" value={claim.procedure.code} mono />
@@ -102,7 +159,7 @@ export const ClaimDetails = ({ claim }) => {
                     </DetailSection>
                 </div>
 
-                {/* Documents Section (NEW) */}
+                {/* Documents Section */}
                 <div className="mb-6">
                     <h3 className="text-sm font-bold text-slate-800 mb-3 flex items-center gap-2">
                         <FileText size={16} className="text-blue-500" />
@@ -134,13 +191,17 @@ export const ClaimDetails = ({ claim }) => {
                 </div>
 
                 {/* Dynamic Status Content */}
-                {claim.status === 'denied' && (
-                    <div className="p-4 bg-red-50 rounded-xl border border-red-100 mb-6">
+                {(claim.status === 'denied' || claim.status === 'needs_info') && (
+                    <div className={`p-4 rounded-xl border mb-6 ${claim.status === 'denied' ? 'bg-red-50 border-red-100' : 'bg-amber-50 border-amber-100'}`}>
                         <div className="flex gap-3">
-                            <AlertCircle className="text-red-600 shrink-0" size={20} />
+                            <AlertCircle className={`${claim.status === 'denied' ? 'text-red-600' : 'text-amber-600'} shrink-0`} size={20} />
                             <div>
-                                <h4 className="font-semibold text-red-900">Authorization Denied</h4>
-                                <p className="text-sm text-red-700 mt-1 leading-relaxed">{claim.denialReason}</p>
+                                <h4 className={`font-semibold ${claim.status === 'denied' ? 'text-red-900' : 'text-amber-900'}`}>
+                                    {claim.status === 'denied' ? 'Authorization Denied' : 'Information Required'}
+                                </h4>
+                                <p className={`text-sm mt-1 leading-relaxed ${claim.status === 'denied' ? 'text-red-700' : 'text-amber-700'}`}>
+                                    {claim.denialReason || claim.missingInfo}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -169,7 +230,7 @@ export const ClaimDetails = ({ claim }) => {
                                         <span className="text-slate-500 text-xs shrink-0 pt-0.5">{line.time.split('T').pop()}</span>
                                         <div className="flex-1">
                                             <span className={`text-xs font-bold uppercase tracking-wider mb-0.5 block ${line.speaker === 'agent' ? 'text-blue-400' :
-                                                    line.speaker === 'rep' ? 'text-emerald-400' : 'text-slate-400'
+                                                line.speaker === 'rep' ? 'text-emerald-400' : 'text-slate-400'
                                                 }`}>
                                                 {line.speaker}
                                             </span>
