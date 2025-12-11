@@ -1,12 +1,12 @@
-# InsurAI Voice 🏥🤖
+# ClaimReclaim 🏥🤖
 
 **Healthcare Insurance Resolution Agent Dashboard**
 
 > 🏆 Built for the [Hackathon Name] Hackathon
 
-InsurAI Voice is a real-time command center for healthcare staff to monitor AI agents as they autonomously negotiate insurance claims. It transforms the tedious, hours-long process of waiting on hold and arguing for pre-authorizations into a streamlined, visual workflow.
+ClaimReclaim is a real-time command center for healthcare staff to monitor AI agents as they autonomously negotiate insurance claims. It transforms the tedious, hours-long process of waiting on hold and arguing for pre-authorizations into a streamlined, visual workflow.
 
-![InsurAI Dashboard](https://via.placeholder.com/800x450.png?text=InsurAI+Dashboard+Preview)
+![ClaimReclaim Dashboard](https://via.placeholder.com/800x450.png?text=ClaimReclaim+Dashboard+Preview)
 
 ## 🚀 Key Features
 
@@ -21,6 +21,7 @@ InsurAI Voice is a real-time command center for healthcare staff to monitor AI a
 *   **Styling**: Tailwind CSS for a premium, clean medical aesthetic.
 *   **Icons**: Lucide React.
 *   **Animations**: Framer Motion & CSS native animations.
+*   **State**: React Hooks (useState, useEffect).
 
 ## 🏃‍♂️ How to Run Locally
 
