@@ -1,0 +1,86 @@
+{
+    "info": {
+        "_postman_id": "insurance-agent-api",
+        "name": "Insurance Agent API",
+        "description": "API for triggering ElevenLabs phone calls to insurers",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{base_url}}/health",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "health"
+                    ]
+                },
+                "description": "Check if the API is running"
+            },
+            "response": []
+        },
+        {
+            "name": "Call Insurer",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"phone_number\": \"{{phone_number}}\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/calls/insurer",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "calls",
+                        "insurer"
+                    ]
+                },
+                "description": "Trigger an ElevenLabs phone call to an insurer"
+            },
+            "response": []
+        },
+        {
+            "name": "Call Insurer (Custom Agent)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"phone_number\": \"{{phone_number}}\",\n  \"agent_id\": \"{{agent_id}}\"\n}"
+                },
+                "url": {
+                    "raw": "{{base_url}}/api/calls/insurer",
+                    "host": [
+                        "{{base_url}}"
+                    ],
+                    "path": [
+                        "api",
+                        "calls",
+                        "insurer"
+                    ]
+                },
+                "description": "Trigger an ElevenLabs phone call with a specific agent ID"
+            },
+            "response": []
+        }
+    ]
+}
